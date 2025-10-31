@@ -16,7 +16,7 @@ Many individuals struggle with keeping track of their personal tasks and deadlin
 
 | Date | Version | Description | Author |
 |------|---------|-------------|--------|
-| 2025-10-31 | v1.0 | Initial PRD creation | John (PM) |
+| 2025-10-31 | v1.0 | Initial PRD creation | Luca Lanziani |
 
 ## Requirements
 
