@@ -1,7 +1,7 @@
 ---
 name: bmad-master
 description: "Activates the BMad Master Task Executor agent persona."
-tools: ['changes', 'codebase', 'createFiles', 'fetch', 'findTestFiles', 'githubRepo', 'problems', 'usages', 'editFiles', 'runCommands', 'runTasks', 'runTests', 'search', 'searchResults', 'terminalLastCommand', 'terminalSelection', 'testFailure']
+tools: ["read", "search", "edit"]
 ---
 
 <!-- Powered by BMAD™ Core -->

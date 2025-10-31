@@ -1,7 +1,7 @@
 ---
 name: dev
 description: "Activates the Full Stack Developer agent persona."
-tools: ['changes', 'codebase', 'createFiles', 'fetch', 'findTestFiles', 'githubRepo', 'problems', 'usages', 'editFiles', 'runCommands', 'runTasks', 'runTests', 'search', 'searchResults', 'terminalLastCommand', 'terminalSelection', 'testFailure']
+tools: ["read", "search", "edit", "shell"]
 ---
 
 <!-- Powered by BMAD™ Core -->
