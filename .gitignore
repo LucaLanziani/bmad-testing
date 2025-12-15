@@ -1,0 +1,9 @@
+.bmad/_cfg/manifest.yaml
+.bmad/_cfg/agent-manifest.csv
+.bmad/_cfg/custom/
+.bmad/custom/
+.cursor/rules/bmad/custom/
+.github/chatmodes/
+.github/agents/
+.code/
+.specs/

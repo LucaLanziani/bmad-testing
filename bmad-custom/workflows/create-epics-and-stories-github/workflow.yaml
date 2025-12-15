@@ -1,0 +1,72 @@
+# Epic and Story Creation with GitHub Integration
+name: create-epics-and-stories-github
+description: "Transform PRD requirements and Architecture decisions into comprehensive epics and stories, then push directly to GitHub as Milestones and Issues. This workflow automates the entire process from document analysis to GitHub project setup, eliminating manual transfer and ensuring consistent formatting."
+author: "Nearformer"
+
+# Critical variables from config
+config_source: "{project-root}/.bmad/bmm/config.yaml"
+project_name: "{config_source}:project_name"
+output_folder: "{config_source}:output_folder"
+user_name: "{config_source}:user_name"
+communication_language: "{config_source}:communication_language"
+document_output_language: "{config_source}:document_output_language"
+user_skill_level: "{config_source}:user_skill_level"
+date: system-generated
+
+# GitHub Configuration (runtime)
+github_repository: "ask-user"  # Format: owner/repo
+github_token_env: "GITHUB_TOKEN"
+
+# Smart input file references - handles both whole docs and sharded docs
+input_file_patterns:
+  prd:
+    description: "Product Requirements Document with FRs and NFRs (required)"
+    whole: "{output_folder}/*prd*.md"
+    sharded: "{output_folder}/*prd*/index.md"
+    load_strategy: "INDEX_GUIDED"
+  architecture:
+    description: "Architecture decisions and technical design (required)"
+    whole: "{output_folder}/*architecture*.md"
+    sharded: "{output_folder}/*architecture*/index.md"
+    load_strategy: "FULL_LOAD"
+  ux_design:
+    description: "UX design specification for interaction patterns (optional)"
+    whole: "{output_folder}/*ux*.md"
+    sharded: "{output_folder}/*ux*/index.md"
+    load_strategy: "FULL_LOAD"
+
+# Module path and component files
+installed_path: "{project-root}/bmad-custom/workflows/create-epics-and-stories-github"
+instructions: "{installed_path}/instructions.md"
+
+# Sidecar file for state persistence and resume capability
+sidecar_file: "{output_folder}/.github-sync-state.yaml"
+
+# GitHub API endpoints (for reference)
+github_api:
+  base_url: "https://api.github.com"
+  labels: "/repos/{owner}/{repo}/labels"
+  milestones: "/repos/{owner}/{repo}/milestones"
+  issues: "/repos/{owner}/{repo}/issues"
+
+# Default labels to create
+default_labels:
+  - name: "epic"
+    color: "7057ff"
+    description: "Epic-level work item"
+  - name: "story"
+    color: "0e8a16"
+    description: "User story"
+  - name: "priority:high"
+    color: "d93f0b"
+    description: "High priority"
+  - name: "priority:medium"
+    color: "fbca04"
+    description: "Medium priority"
+  - name: "priority:low"
+    color: "0e8a16"
+    description: "Low priority"
+
+standalone: true
+web_bundle: true
+

@@ -1,0 +1,18 @@
+installation:
+  version: 6.0.0-alpha.13
+  installDate: 2025-12-01T09:18:26.062Z
+  lastUpdated: 2025-12-01T09:18:26.247Z
+modules:
+  - core
+  - bmb
+  - bmm
+ides:
+  - cursor
+  - github-copilot
+custom_agents:
+  - name: infra-engineer
+    type: infra-engineer
+    installed: 2025-12-01T09:18:26.230Z
+  - name: python-dev
+    type: python-dev
+    installed: 2025-12-01T09:18:26.247Z
