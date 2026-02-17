@@ -2,8 +2,8 @@ package config
 
 import (
 	"encoding/json"
-	"os"
 	"golang.org/x/term"
+	"os"
 )
 
 // OutputConfig holds output-related configuration

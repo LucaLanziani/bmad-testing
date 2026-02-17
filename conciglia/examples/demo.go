@@ -9,7 +9,7 @@ import (
 )
 
 func main() {
-	fmt.Println("=== Conciglia Color Configuration Demo ===\n")
+	fmt.Println("=== Conciglia Color Configuration Demo ===")
 
 	// Load configuration
 	cfg, err := config.Load("")
