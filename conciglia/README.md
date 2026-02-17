@@ -80,7 +80,7 @@ CONCIGLIA_NO_COLOR=1 conciglia
 Run the interactive demo to see color configuration in action:
 
 ```bash
-# Default behavior (colors enabled in TTY)
+# Default behavior (colors disabled in non-TTY, like piped output)
 go run examples/demo.go
 
 # Disable colors with NO_COLOR
@@ -96,7 +96,12 @@ Run the test suite:
 
 ```bash
 cd conciglia
-go test ./internal/config -v
+
+# Run all tests in internal packages
+go test ./internal/... -v
+
+# Run tests with coverage
+go test ./internal/config -cover
 ```
 
 ### Test Coverage
