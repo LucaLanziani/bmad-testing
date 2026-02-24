@@ -75,33 +75,64 @@ NO_COLOR=1 conciglia
 CONCIGLIA_NO_COLOR=1 conciglia
 ```
 
-## Demo
+## Building and Testing
 
-Run the interactive demo to see color configuration in action:
-
-```bash
-# Default behavior (colors disabled in non-TTY, like piped output)
-go run examples/demo.go
-
-# Disable colors with NO_COLOR
-NO_COLOR=1 go run examples/demo.go
-
-# Disable colors with CONCIGLIA_NO_COLOR
-CONCIGLIA_NO_COLOR=1 go run examples/demo.go
-```
-
-## Testing
-
-Run the test suite:
+This project includes a Makefile for common development tasks:
 
 ```bash
 cd conciglia
 
+# Run tests and linter
+make all
+
+# Run tests only
+make test
+
+# Run tests with coverage report
+make test-coverage
+
+# Run linter (golangci-lint or go vet)
+make lint
+
+# Format code
+make fmt
+
+# Build binary (when main.go is implemented)
+make build
+
+# Run the demo
+make demo
+
+# Show all available commands
+make help
+```
+
+### Alternative: Direct Go Commands
+
+You can also use Go commands directly:
+
+```bash
 # Run all tests in internal packages
 go test ./internal/... -v
 
 # Run tests with coverage
 go test ./internal/config -cover
+```
+
+## Demo
+
+Run the interactive demo to see color configuration in action:
+
+```bash
+# Using make
+make demo
+
+# Or directly with go
+go run examples/demo.go
+
+# Test with environment variables
+NO_COLOR=1 make demo
+CONCIGLIA_NO_COLOR=1 make demo
 ```
 
 ### Test Coverage
